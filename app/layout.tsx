@@ -1,6 +1,9 @@
-import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import clsx from "clsx";
+import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const inter = Poppins({
   subsets: ["latin"],
@@ -19,7 +22,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={clsx(inter.className, "bg-light", "text-dark")}>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
