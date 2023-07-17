@@ -1,3 +1,5 @@
+import { BsBag } from "react-icons/bs";
+
 import Link from "next/link";
 import Butoon from "./Butoon";
 
@@ -37,7 +39,13 @@ const Navbar = () => {
           </ul>
         </nav>
         {/* NAV Right */}
-        <nav>
+        <nav className="flex items-center gap-5">
+          <Link href="cart" className="relative">
+            <BsBag />
+            <span className="absolute text-xs w-4 h-4s rounded-full bg-dark text-light flex justify-center items-center -right-2 -bottom-2">
+              10
+            </span>
+          </Link>
           <Butoon herf="/login" placeholder="login" color="green" />
         </nav>
       </div>
