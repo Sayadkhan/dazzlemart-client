@@ -1,5 +1,6 @@
 "use client";
 
+import { getTransition } from "@/utils/getTransition";
 import { motion } from "framer-motion";
 
 import Image from "next/image";
@@ -15,7 +16,7 @@ const Hero = () => {
               y: "-100%",
             }}
             whileInView={{ y: 0 }}
-            transition={{ ease: "easeInOut", duration: 1, delay: 0 }}
+            transition={getTransition()}
             className="w-full h-full"
           >
             <Image
@@ -39,7 +40,7 @@ const Hero = () => {
               y: "-100%",
             }}
             whileInView={{ y: 0 }}
-            transition={{ ease: "easeInOut", duration: 1, delay: 0.2 }}
+            transition={getTransition(0.2)}
             className="w-full h-full"
           >
             <Image
@@ -63,7 +64,7 @@ const Hero = () => {
               y: "-100%",
             }}
             whileInView={{ y: 0 }}
-            transition={{ ease: "easeInOut", duration: 1, delay: 0.4 }}
+            transition={getTransition(0.4)}
             className="w-full h-full"
           >
             <Image
