@@ -1,11 +1,20 @@
+"use client";
+
 import { BsBag } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 import Link from "next/link";
 import Butoon from "./Butoon";
+import { getTransition } from "@/utils/getTransition";
 
 const Navbar = () => {
   return (
-    <header className="h-20 fixed top-0 left-0 right-0 bg-light border-b border-dark-10 z-[100] ">
+    <motion.header
+      initial={{ y: "-100%" }}
+      animate={{ y: 0 }}
+      transition={getTransition(0.6)}
+      className="h-20 fixed top-0 left-0 right-0 bg-light border-b border-dark-10 z-[100] "
+    >
       <div className="wrapper w-full h-full flex justify-between items-center">
         {/* NAV LEFT */}
         <nav>
@@ -49,7 +58,7 @@ const Navbar = () => {
           <Butoon herf="/login" placeholder="login" color="green" />
         </nav>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
